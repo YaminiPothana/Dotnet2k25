@@ -1,25 +1,29 @@
 ﻿using System;
+
 namespace INHERITANCE
 {
-    public class Square :Figures
+    public class Square : Figures
     {
+        public Square(double length)
+        {
+            Length = length;
+        }
+
+        public override void CalculateArea()
+        {
+            double area = Length * Length;
+            Console.WriteLine($"Area of Square: {area}");
+        }
+
+        public override void CalculatePerimeter()
+        {
+            double perimeter = 4 * Length;
+            Console.WriteLine($"Perimeter of Square: {perimeter}");
+        }
+
         public static void PrintResult()
         {
-            Console.WriteLine("Static method of child class");
-        }
-        public override void Display()
-        {
-            Console.WriteLine("overriding display method of child class");
-        }
-        public void AreaOfSquare(double length)
-        {
-            this.length = length;
-            Console.WriteLine("Area of square is  :" + length * length);
-        }
-        public void PerimeterOfSquare(double length)
-        {
-            this.length = length;
-            Console.WriteLine("Area of square is  :" + 4 * length);
+            Console.WriteLine("Static method of Square class");
         }
     }
 }

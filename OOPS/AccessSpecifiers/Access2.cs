@@ -1,14 +1,18 @@
 ﻿using System;
 
- 
-namespace INHERITANCE
+namespace AccessSpecifiers
 {
     public class Access2 : Access
     {
-        public static void Main(string[] args)
+        public void TestDerivedAccess()
         {
-            Access2 access2 = new Access2();
-            access2.Display2();
+            Console.WriteLine("\nTesting Access Specifiers Inside Derived Class:");
+
+            // Display1(); Not accessable outside of the class.
+            Display2();   
+            Display3();    
+            Display4();    
+            Display5();    
         }
     }
 }

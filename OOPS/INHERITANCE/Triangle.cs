@@ -1,23 +1,30 @@
 ﻿using System;
- 
 
 namespace INHERITANCE
 {
-    internal class Triangle : Figures
+    public class Triangle : Figures
     {
-        public void AreaOfTriangle(double height, double width)
+        private double SideA, SideB, SideC;
+
+        public Triangle(double height, double width, double sideA, double sideB, double sideC)
         {
-            this.height = height;
-            this.width = width;
-            Console.WriteLine("Area of Triangle is :" + (0.5) * height * width);
+            Height = height;
+            Width = width;
+            SideA = sideA;
+            SideB = sideB;
+            SideC = sideC;
         }
-        public void PerimeterOfTriangle(double height, double width,double length)
+
+        public override void CalculateArea()
         {
-            this.height = height;
-            this.width = width;
-            this.length = length;
-            Console.WriteLine("Perimeter of Triangle is :" + length + height + width);
+            double area = 0.5 * Height * Width;
+            Console.WriteLine($"Area of Triangle: {area}");
         }
-        
+        public void CalculatePermiter()
+        {
+            double perimeter = SideA + SideB+ SideC;
+            Console.WriteLine($"Permiter of Triable is :{perimeter}");
+        }
+
     }
 }

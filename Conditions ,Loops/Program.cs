@@ -1,107 +1,185 @@
 ﻿using System;
-class Myclass
-{
 
+class Program
+{
     static void Main(string[] args)
     {
-        for(int a = 1;a<3;a++)
+        try
         {
-            for(int b=1;b<3;b++)
+            // Calling all the methods
+            ForLoop();
+            GreetUser();
+            WishBasedOnTime(21);
+            CheckIfElseCondition();
+            UsingWhileLoop();
+            UsingDoWhileLoop();
+            CheckRainbowColor();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+    }
+
+    // 1. Taking User Input and Greeting
+    static void GreetUser()
+    {
+        try
+        {
+            Console.Write("Enter your Name: ");
+            string name = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Name cannot be empty.");
+
+            Console.WriteLine("Hello " + name);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    // 2. Wishing based on Time
+    static void WishBasedOnTime(int time)
+    {
+        try
+        {
+            if (time < 0 || time > 24)
+                throw new ArgumentOutOfRangeException("Time should be between 0 and 24."); //Throws an exception, when an argument is out of an acceptable range. 
+
+            if (time < 12)
             {
-                if(a == b)
-                break;
-                Console.WriteLine(a + " " + b);
+                Console.WriteLine("Good Morning Yamini");
+            }
+            else if (time > 13 && time < 16)
+            {
+                Console.WriteLine("Good Afternoon Yamini");
+            }
+            else
+            {
+                Console.WriteLine("Good Evening Yamini");
             }
         }
-        
-        //using if,else ,else-if condition
-        int Time = 21;
-        
-        if (Time < 12)
+        catch (Exception ex)
         {
-            Console.WriteLine("Good Morning Yamini");
+            Console.WriteLine($"Error: {ex.Message}");
         }
-        else if (Time > 13 && Time < 16)
-        {
-            Console.WriteLine("Good Afternoon Yamini");
-        }
-        else
-        {
-            Console.WriteLine("Good Evening Yamini");
-        }
+    }
 
-        // taking input from the user
-        string Name;
-        Console.Write("Enter your Name :");
-        Name = Console.ReadLine();
-        Console.WriteLine("Good Morning " + Name);
-
-        //using switch case conditional statement
-
-        string color ;
-       Console.WriteLine("Enter Color");
-       color= Console.ReadLine();
-        switch (color)
+    // 3. If-Else Condition Example
+    static void CheckIfElseCondition()
+    {
+        try
         {
-
-            case "Violet":
-                Console.WriteLine("violet");
-                break;
-            case "Indigo":
-                Console.WriteLine("Indigo");
-                break;
-            case "Blue":
-                Console.WriteLine("Blue");
-                break;
-            case "Green":
-                Console.WriteLine("Green");
-                break;
-            case "Yellow":
-                Console.WriteLine("Yellow");
-                break;
-            case "Orange":
-                Console.WriteLine("Orange");
-                break;
-            case "Red":
-                Console.WriteLine("Red");
-                break;
-            default: Console.WriteLine("Not a RainBow colour");
-                break;
+            int p = 5;
+            if (p > 6)
+            {
+                Console.WriteLine("Hai");
+            }
+            else if (p < 6)
+            {
+                Console.WriteLine("Hello");
+            }
+            else
+            {
+                Console.WriteLine(p);
+            }
         }
-        // looping statements
-        //usage of while loop  
-        int i= 1;
-        while (i <= 5)
+        catch (Exception ex)
         {
-            Console.WriteLine("Cognine Technologies");
-            i++;
+            Console.WriteLine($"Error: {ex.Message}");
         }
+    }
 
-        //Using do while loop
-        int j = 1;
-        do
+    // 4. For Loop with Break Condition
+    static void ForLoop()
+    {
+        try
         {
-            Console.WriteLine(" Do Good ");
-            j++;
+            for (int a = 1; a < 6; a++)
+            {
+                for (int b = 1; b < 6; b++)
+                {
+                    if (a == b)
+                        break;
+                    Console.WriteLine($"{a} {b}");
+                }
+            }
         }
-        while (j <= 5);
-        // if statements
-        int p = 5;
-        if (p > 6)
+        catch (Exception ex)
         {
-            Console.WriteLine("Hai");
+            Console.WriteLine($"Error: {ex.Message}");
         }
-        else if( p < 6)
-        {
-            Console.WriteLine("Hello");
-            
-        }
-        else
-        {
-            Console.WriteLine(p);
-        }
+    }
 
+    // 5. While Loop Example
+    static void UsingWhileLoop()
+    {
+        try
+        {
+            int i = 1;
+            while (i <= 5)
+            {
+                Console.WriteLine("Cognine Technologies");
+                i++;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
 
+    // 6. Do-While Loop Example
+    static void UsingDoWhileLoop()
+    {
+        try
+        {
+            int j = 1;
+            do
+            {
+                Console.WriteLine("Do Good");
+                j++;
+            }
+            while (j <= 5);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
 
+    // 7. Using Switch Case for Rainbow Colors
+    static void CheckRainbowColor()
+    {
+        try
+        {
+            Console.Write("Enter Color: ");
+            string color = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(color))
+                throw new ArgumentException("Color cannot be empty."); // Throws an exception, when an invalid argument is passed.
+
+            switch (color)
+            {
+                case "Violet":
+                case "Indigo":
+                case "Blue":
+                case "Green":
+                case "Yellow":
+                case "Orange":
+                case "Red":
+                    Console.WriteLine(color);
+                    break;
+                default:
+                    Console.WriteLine("Not a Rainbow Color");
+                    break;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 }

@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MultilevelInheritance
 {
-    public class Faculty :Student
+    // Derived Class (Multilevel Inheritance - Faculty extends Student)
+    public class Faculty : Student
     {
-        public int salary;
+        public int Salary { get; set; }
+
+        // Method to Display Faculty Details
         public void FacultyDetails()
         {
-            Console.WriteLine("The id of faculty is :" + id);
-            Console.WriteLine("The name of faculty is :" + name);
-            Console.WriteLine("The Salary of faculty is :" +salary);
-
+            Console.WriteLine("\n--- Faculty Details ---");
+            Console.WriteLine($"Faculty ID     : {Id}");
+            Console.WriteLine($"Faculty Name   : {Name}");
+            Console.WriteLine($"Salary         : {Salary}");
         }
     }
 }

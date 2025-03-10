@@ -1,42 +1,20 @@
-﻿
-namespace INHERITANCE
+﻿using System;
+
+namespace AccessSpecifiers
 {
-    public class Access
+    class Program
     {
-        private void Display1()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Private Method");
-        }
+            Console.WriteLine("*----- Access Specifier Demo -----*");
 
-        internal void Display2()
-        {
-            Console.WriteLine("Internal Method");
-        }
+            // Creating object of Base Class (Access)
+            Access baseObj = new Access();
+            baseObj.TestAccess();
 
-        protected void Display3()
-        {
-            Console.WriteLine("Protected Method");
-        }
-
-        protected internal void Display4()
-        {
-            Console.WriteLine("Protected internal Method");
-        }
-
-        public void Display5()
-        {
-            Console.WriteLine("Public Method");
-        }
-
-        public static void Main(string[] args)
-        {
-            Access access = new Access();
-            access.Display1();
-            access.Display2();  
-            access.Display3();
-            access.Display4();
-            access.Display5();
-
+            // Creating object of Derived Class (Access2)
+            Access2 derivedObj = new Access2();
+            derivedObj.TestDerivedAccess();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
- 
 
 namespace Abstraction
 {
@@ -14,14 +13,5 @@ namespace Abstraction
         {
             return 385874.7896;
         }
-        public void Wheel()
-        {
-            Console.WriteLine("Yamini");
-        }
-
-
-
-
-
     }
 }

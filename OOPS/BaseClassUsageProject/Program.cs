@@ -1,38 +1,24 @@
-﻿class Choclate
-{
-    public void Display()
-    {
-        Console.WriteLine("Dispaly Details of project");
-    }
-    public virtual void Show()
-    {
-        Console.WriteLine("Show the method details of Choclate class");
-    }
-}
-class Cadbury : Choclate
-{
-    public void See()
-    {
-        Console.WriteLine("See the Details of Cadbury class");
-    }
-    public override void Show()
-    {
-        Console.WriteLine("override the show method");
-    }
-    public void CallBaseMethod()
-    {
-        base.Show();
-    }
-}
+﻿using System;
 
-class Britania
+namespace BaseClassProject
 {
-    public static void Main()
+    public class Britannia
     {
-        Cadbury cadburyObj = new Cadbury();
-        cadburyObj.Show();
-        cadburyObj.See();
-        cadburyObj.CallBaseMethod();
-       // base.Show();
+        public static void Main()
+        {
+            Console.WriteLine("* Base Class Usage Demo *\n");
+
+            // Creating an object of the derived class (Cadbury)
+            Cadbury cadburyObj = new Cadbury();
+
+            // Calling overridden Show method
+            cadburyObj.Show();
+
+            // Calling method specific to Cadbury
+            cadburyObj.DisplayCadburyDetails();
+
+            // Calling base class Show method using base reference
+            cadburyObj.CallBaseShowMethod();
+        }
     }
 }

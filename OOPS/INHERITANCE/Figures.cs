@@ -1,26 +1,21 @@
-﻿
+﻿using System;
+
 namespace INHERITANCE
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public  class Figures
+    public abstract class Figures
     {
-        public double  length;
-        public double width;
-        public double height;
-        public double radius;
-        //public void name()
-        //{
-        //    Console.WriteLine("good morning ");
-        //}
+        protected double Length;
+        protected double Width;
+        protected double Height;
+        protected double Radius;
 
-        public virtual void  Display()
+        // Abstract methods that must be overridden where necessary
+        public abstract void CalculateArea();
+
+        // Virtual method that can be overridden if required
+        public virtual void CalculatePerimeter()
         {
-            Console.WriteLine("Display method Details Of Parent class");
+            Console.WriteLine("Perimeter calculation is not applicable for this shape.");
         }
-        
-         
     }
-
 }

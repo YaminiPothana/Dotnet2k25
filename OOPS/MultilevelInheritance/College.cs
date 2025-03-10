@@ -1,7 +1,11 @@
-﻿ public class College
- {
-    public int id;
-    public string name;
-    public string desgn;
-    public string Caddress;
+﻿namespace MultilevelInheritance
+{
+    // Base Class (Parent)
+    public class College
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? CollegeAddress { get; set; }
+    }
 }
