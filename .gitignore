@@ -1,0 +1,55 @@
+# Visual Studio specific
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ppPackages/
+[Bb]uild/
+[Ll]og/
+
+# Dependencies
+node_modules/
+packages/
+bin/
+obj/
+out/
+testResults/
+
+# ASP.NET temp files
+*.Publish.xml
+*.PublishSettings
+wwwroot/
+
+# Entity Framework
+*.edmx.diagram
+*.edmx.sql
+*.Designer.cs
+Migrations/
+
+# .NET Core
+project.lock.json
+project.assets.json
+global.json
+*.db
+
+# NuGet
+*.nupkg
+.nuget/
+NuGet.Config
+packages.lock.json
+
+# Rider / JetBrains IDEs
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
