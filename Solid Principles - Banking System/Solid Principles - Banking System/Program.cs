@@ -15,7 +15,7 @@ namespace BankingSystem
             AccountService accountService = new AccountService(notifier);
 
             BankAccount mySavings = new SavingsAccount("Alice", 5000);
-            mySavings.Deposit(1000);
+            mySavings.Deposit(-1000);
             mySavings.Withdraw(200);
             accountService.ProcessAccount(mySavings);
 
